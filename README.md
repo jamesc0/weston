@@ -37,10 +37,12 @@ Building Weston
 Start from Ubuntu 20.04.2 LTS Desktop
 
 meson must be installed with pip or else it doesn't work
+
     $ sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build
     $ sudo pip3 install meson
 
 Install Weston
+
     $ sudo apt-get build-dep weston=8.0.0-1
 
     $ cd ~
@@ -52,6 +54,7 @@ Install Weston
     $ cd ..
 
 I need this following command, otherwise libweston-10.so.0 will not be found
+
     $ sudo ldconfig
 
 Then on ubuntu, type ctrl+alt+F6, to open a virtual terminal.
