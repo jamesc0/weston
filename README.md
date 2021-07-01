@@ -32,7 +32,7 @@ Weston's development is
 Please also see [the contributing document](CONTRIBUTING.md), which details how
 to make code or non-technical contributions to Weston.
 
-Building Weston (original)
+Building Weston
 ===============
 Start from Ubuntu 20.04.2 LTS Desktop
 
