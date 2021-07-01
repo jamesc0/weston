@@ -3,6 +3,8 @@ Weston
 
 ![screenshot of skeletal Weston desktop](doc/wayland-screenshot.jpg)
 
+This is a fork of Wayland.
+
 Weston is the reference implementation of a Wayland compositor, as well as a
 useful environment in and of itself.
 
@@ -22,12 +24,6 @@ A small suite of example or demo clients are also provided: though they can be
 useful in themselves, their main purpose is to be an example or test case for
 others building compositors or clients.
 
-If you are after a more mainline desktop experience, the
-[GNOME](https://www.gnome.org) and [KDE](https://www.kde.org) projects provide
-full-featured desktop environments built on the Wayland protocol. Many other
-projects also exist providing Wayland clients and desktop environments: you are
-not limited to just what you can find in Weston.
-
 Reporting issues and contributing
 =================================
 
@@ -36,7 +32,34 @@ Weston's development is
 Please also see [the contributing document](CONTRIBUTING.md), which details how
 to make code or non-technical contributions to Weston.
 
-Building Weston
+Building Weston (original)
+===============
+# Start from Ubuntu 20.04.2 LTS Desktop
+
+# meson must be installed with pip or else it doesn't work
+sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build
+sudo pip3 install meson
+
+# Install Weston
+sudo apt-get build-dep weston=8.0.0-1
+
+cd ~
+git clone https://gitlab.freedesktop.org/wayland/weston.git
+cd weston
+meson build/
+sudo ln -s /usr/local/bin/meson /usr/local/bin
+ninja -C build/ install
+cd ..
+
+# I need this following command, otherwise libweston-10.so.0 will not be found
+sudo ldconfig
+
+# Then on ubuntu, type ctrl+alt+F6, to open a virtual terminal.
+# https://askubuntu.com/questions/33078/what-is-a-virtual-terminal-for
+# Then enter weston-launch
+# To exit weston-launch, press ctrl+alt+backspace
+
+Building Weston (original)
 ===============
 
 Weston is built using [Meson](https://mesonbuild.com/). Weston often depends
